@@ -43,15 +43,26 @@ First six rows represent the average of each variable for the six activities for
 
 Explanations of the variable's names (CodeBook)
 t: Measured in time.
+
 f: Measured in frequency.
+
 -BodyAcc- Body acceleration.
+
 -GarvityAcc- Gravity acceleration.
+
 -BodyGiro- Body giroscope.
+
 -Jerk- Jerk signals (there are not Jerk signals for Gravity acceleration)
+
 -Mag- Euclidean norm
+
 -X- Measured of the X axe
+
 -Y- Measured of the Y axe
+
 -Z- Measured of the Z axe
+
 -mean() mean of the times or frequency
+
 -std() mean of the times or frequency
 
