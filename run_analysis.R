@@ -33,8 +33,8 @@ df<-cbind(ds,activities,subjects)
 #STEP 2:
 #Extracts only the measurements on the mean and standard deviation for each measurement.
 #Picking relevant variables
-wmean<-grep("mean",features[,2])
-wstd<-grep("std",features[,2])
+wmean<-grep("mean()",features[,2],fixed=TRUE)
+wstd<-grep("std()",features[,2],fixed=TRUE)
 picks<-sort(c(wmean,wstd))
 #data frame with  the mean and standard deviation for each measurement
 #Last two columns are encoded activities and subjects
@@ -44,7 +44,7 @@ tidyd<-df[,c(picks,562:563)]
 #Uses descriptive activity names to name the activities in the data set
 #Encodig (factor) activities
 activities_char<-as.character(activity_labels$V2)
-tidyd[,80]<- factor(activities$V1,labels=activities_char)
+tidyd[,ncol(tidyd)-1]<- factor(activities$V1,labels=activities_char)
 
 #STEP 4:
 #Appropriately labels the data set with descriptive variable names. 
@@ -58,5 +58,5 @@ names(tidyd)<-labels
 #tidy has only 79 because we exclude subjects and activities
 #Row names: activitiy.subject
 #eg. 
-tidy<-t(sapply(split(tidyd[,1:79],list(tidyd$activities,factor(tidyd$subjects))),colMeans))
+tidy<-t(sapply(split(tidyd[,1:(ncol(tidyd)-2)],list(tidyd$activities,factor(tidyd$subjects))),colMeans))
 tidy<-data.frame(tidy)
