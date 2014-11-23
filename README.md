@@ -41,7 +41,7 @@ The row name contains the activity label an the identifier of the subject who ca
 First six rows represent the average of each variable for the six activities for the first subject. Next six rows the the average of each variable for the six activities for the second subject.
 6 activities *30 subjects = 180 rows
 
-Explanations of the variable's names (CodeBook)
+#Explanations of the variable's names (CodeBook)
 t: Measured in time.
 
 f: Measured in frequency.
